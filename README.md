@@ -34,3 +34,26 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## DB Configuration
+
+User Table
+```bash
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY, -- Unique ID for each user
+    name VARCHAR(255) NOT NULL,        -- Name of the user
+    email VARCHAR(255) NOT NULL,       -- Email address
+    phoneNo VARCHAR(15),               -- Phone number
+    VCN VARCHAR(50),                   -- VCN (adjust length as necessary)
+    nin VARCHAR(50),                   -- NIN (adjust length as necessary)
+    SOR VARCHAR(100),                  -- State of Residence (adjust length as necessary)
+    LG VARCHAR(100),                   -- Local Government
+    ward VARCHAR(100),                 -- Ward
+    PUN VARCHAR(100),                  -- Polling Unit Number
+    ProfilePic VARCHAR(255),           -- Profile picture URL or filename
+    gender ENUM('Male', 'Female', 'Other'), -- Gender as an ENUM
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Automatically track creation time
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP -- Automatically track updates
+);
+
+```
